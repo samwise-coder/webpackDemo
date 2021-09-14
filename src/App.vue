@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     foo() {
-      console.log("webpack配置需要和webpackChain配合使用！");
+      console.log("webpack配置需要和webpackChain配合使用！----");
     },
   },
 };

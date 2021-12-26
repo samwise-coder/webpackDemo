@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <test-toast />
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
@@ -12,6 +13,9 @@ export default {
   name: "App",
   components: {
     HelloWorld,
+  },
+  mounted() {
+    this.$myMethod();
   },
   methods: {
     foo() {

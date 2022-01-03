@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <test-toast />
+    <input v-focus type="text" />
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
@@ -15,9 +16,15 @@ export default {
     HelloWorld,
   },
   mounted() {
-    this.$myMethod();
+    this.$myMethod(); //插件方法
+    this.destrut();
   },
   methods: {
+    destrut() {
+      let [a, b, c] = [1, 2, 3];
+      let f = [11, 22];
+      console.log(a, "----", b, c, [...f, c]);
+    },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");
     },

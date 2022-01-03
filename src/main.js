@@ -4,6 +4,11 @@ import App from './App.vue'
 import myPlugin from './plugin/myPlugin'
 
 Vue.use(myPlugin)
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus()
+  }
+})
 Vue.config.productionTip = false
 
 new Vue({

@@ -21,9 +21,7 @@ export default {
   },
   methods: {
     destrut() {
-      let [a, b, c] = [1, 2, 3];
-      let f = [11, 22];
-      console.log(a, "----", b, c, [...f, c]);
+      console.log(3 ** 3);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

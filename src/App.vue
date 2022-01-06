@@ -21,10 +21,7 @@ export default {
   },
   methods: {
     destrut() {
-      function sortNumbers() {
-        return Array.from(arguments).sort();
-      }
-      console.log(sortNumbers(2, 4, 6, 71, 3));
+      console.log([...[1, 2, 32, 4, 5, 6].entries()]);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

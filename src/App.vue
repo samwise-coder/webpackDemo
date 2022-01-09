@@ -21,7 +21,9 @@ export default {
   },
   methods: {
     destrut() {
-      console.log([...[1, 2, 32, 4, 5, 6].entries()]);
+      const target = { a: 1 };
+      const target1 = { b: 2 };
+      console.log(Object.assign(target, target1));
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

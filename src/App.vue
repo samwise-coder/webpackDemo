@@ -21,9 +21,8 @@ export default {
   },
   methods: {
     destrut() {
-      const target = { a: 1 };
-      const target1 = { b: 2 };
-      console.log(Object.assign(target, target1));
+      let s = Symbol();
+      console.log(typeof s);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

@@ -21,8 +21,10 @@ export default {
   },
   methods: {
     destrut() {
-      let s = Symbol();
-      console.log(typeof s);
+      let s = Symbol("12");
+      let a = {};
+      a[s] = "hello";
+      console.log(a[s]);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

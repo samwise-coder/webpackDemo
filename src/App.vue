@@ -21,10 +21,15 @@ export default {
   },
   methods: {
     destrut() {
-      let s = Symbol("12");
-      let a = {};
-      a[s] = "hello";
-      console.log(a[s]);
+      const log = {};
+      log.levels = {
+        DEBUG: Symbol("debug"),
+        INFO: Symbol("info"),
+        WARN: Symbol("warn"),
+      };
+      console.log(log.levels.DEBUG, "debug message");
+      console.log(log.levels.INFO, "info message");
+      console.log(global);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

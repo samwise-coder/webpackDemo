@@ -21,15 +21,45 @@ export default {
   },
   methods: {
     destrut() {
-      const log = {};
-      log.levels = {
-        DEBUG: Symbol("debug"),
-        INFO: Symbol("info"),
-        WARN: Symbol("warn"),
-      };
-      console.log(log.levels.DEBUG, "debug message");
-      console.log(log.levels.INFO, "info message");
-      console.log(global);
+      let obj = new Proxy(
+        {},
+        {
+          get: function (target, propKey, receiver) {
+            console.log(
+              "target:",
+              target,
+              "propKey:",
+              propKey,
+              "recevier:",
+              receiver
+            );
+            return Reflect.get(target, propKey, receiver);
+          },
+          set: function (target, propKey, value, receiver) {
+            console.log(
+              "target:",
+              target,
+              "propKey:",
+              propKey,
+              "value:",
+              value,
+              "recevier:",
+              receiver
+            );
+            return Reflect.set(target, propKey, value, receiver);
+          },
+        }
+      );
+      obj.count = 1;
+      let testPro = new Proxy(
+        {},
+        {
+          get: function () {
+            return 35;
+          },
+        }
+      );
+      console.log(testPro.time);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

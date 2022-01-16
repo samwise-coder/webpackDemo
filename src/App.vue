@@ -21,45 +21,11 @@ export default {
   },
   methods: {
     destrut() {
-      let obj = new Proxy(
-        {},
-        {
-          get: function (target, propKey, receiver) {
-            console.log(
-              "target:",
-              target,
-              "propKey:",
-              propKey,
-              "recevier:",
-              receiver
-            );
-            return Reflect.get(target, propKey, receiver);
-          },
-          set: function (target, propKey, value, receiver) {
-            console.log(
-              "target:",
-              target,
-              "propKey:",
-              propKey,
-              "value:",
-              value,
-              "recevier:",
-              receiver
-            );
-            return Reflect.set(target, propKey, value, receiver);
-          },
-        }
-      );
-      obj.count = 1;
-      let testPro = new Proxy(
-        {},
-        {
-          get: function () {
-            return 35;
-          },
-        }
-      );
-      console.log(testPro.time);
+      let a = Function.prototype.apply.call(Math.floor, undefined, [1.75]); // 1
+
+      // 新写法
+      let b = Reflect.apply(Math.floor, undefined, [4.75]); // 1
+      console.log(a, b);
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

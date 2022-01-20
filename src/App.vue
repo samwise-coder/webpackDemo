@@ -21,11 +21,10 @@ export default {
   },
   methods: {
     destrut() {
-      let a = Function.prototype.apply.call(Math.floor, undefined, [1.75]); // 1
+      let arr = ["a", "b", "c"];
+      let iter = arr[Symbol.iterator]();
 
-      // 新写法
-      let b = Reflect.apply(Math.floor, undefined, [4.75]); // 1
-      console.log(a, b);
+      console.log(iter.next(), iter.next(), iter.next(), iter.next());
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");

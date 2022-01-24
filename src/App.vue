@@ -4,6 +4,7 @@
     <input v-focus type="text" />
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <canvas ref="canvasTest" class="ttt" width="400" height="400"></canvas>
   </div>
 </template>
 
@@ -21,10 +22,12 @@ export default {
   },
   methods: {
     destrut() {
-      let arr = ["a", "b", "c"];
-      let iter = arr[Symbol.iterator]();
-
-      console.log(iter.next(), iter.next(), iter.next(), iter.next());
+      let ca = this.$refs.canvasTest;
+      let ctx = ca.getContext("2d");
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(399, 0);
+      ctx.stroke();
     },
     foo() {
       console.log("webpack配置需要和webpackChain配合使用！----");
@@ -33,7 +36,8 @@ export default {
 };
 </script>
 
-<style>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,5 +45,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.ttt {
+  background-color: antiquewhite;
 }
 </style>

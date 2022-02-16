@@ -26,7 +26,8 @@ export default {
       let ctx = ca.getContext("2d");
       ctx.beginPath();
       ctx.moveTo(0, 0);
-      ctx.lineTo(399, 0);
+      ctx.lineTo(0, 400);
+      ctx.lineTo(400, 400);
       ctx.stroke();
     },
     foo() {
